@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  apache:
+    image: myapache
+    build: ./
+    container_name: myapache
+    ports:
+    - 8080:80
+    - 8081:8081
+    - 8082:8082
+    - 8083:8083
+    volumes:
+      - ./www/html:/var/www/html
+      - ./www/html2:/var/www2/html2
+      - ./www/html3:/var/www3/html3
+      - ./conf/port-based-demo:/etc/apache2
