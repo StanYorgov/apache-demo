@@ -61,6 +61,13 @@ The default value is /var/www/html, as specified in /etc/apache2/sites-available
 ### Include
 This directive allows inclusion of other configuration files from within the server configuration files. This is very useful when you want to give access to the configuration of a website to a developer team or vendor employee, whithout giving them root access (becasue /etc requires root).
 
+## .htaccess file
+An .htaccess file is used for an Apache web server as a way to configure the details of your website without altering the server configuration files. This file begins with a period to signify that it’s hidden within the folder. An .htaccess file can be used to load customized error pages (such as 404 pages), create URL redirects, implement password-protected authentication for specific directories on your server, and more.
+
+It is not advised however to use .htaccess anymore. The following is a quote from the [official Apache documentation of the .htaccess file](https://httpd.apache.org/docs/2.4/howto/htaccess.html):
+
+> You should avoid using .htaccess files completely if you have access to httpd main server config file. Using .htaccess files slows down your Apache http server. Any directive that you can include in a .htaccess file is better set in a Directory block, as it will have the same effect with better performance.
+
 ## Virtual Hosts
 Virtuals hosts allow a single server to host multiple websites or web applications. Each virtual host has its own separate configuration, allowing different domains or subdomains to be served independently. Virtual hosts are a crucial feature for efficiently managing and hosting multiple websites on a single server.
 
